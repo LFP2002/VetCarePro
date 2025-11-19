@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal público y sistema profesional de la clínica veterinaria VetCare PRO">
+    <title>VetCare PRO | Clínica Veterinaria Integral</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm bg-white">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
+                <img src="assets/img/logo.svg" alt="Logo VetCare PRO" width="48" height="48">
+                <div class="fw-bold brand-text">VetCare <span>PRO</span></div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <button id="sessionToggle" class="btn btn-primary">Iniciar sesión</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="container" id="guestWrapper">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 text-white">
+                        <p class="text-uppercase fw-semibold text-info mb-2">Clínica Veterinaria VetCare PRO</p>
+                        <h1 class="display-5 fw-bold">Agenda tu cita en línea y recibe confirmación por WhatsApp.</h1>
+                        <p class="lead text-white-50">Nuestro equipo revisará tu solicitud y coordinaremos el horario disponible más cercano.</p>
+                        <ul class="list-unstyled text-white-50 small mt-4">
+                            <li class="mb-2"><i class="bi bi-check-circle me-2 text-success"></i>Consultas generales y de especialidad.</li>
+                            <li class="mb-2"><i class="bi bi-check-circle me-2 text-success"></i>Vacunación y control preventivo.</li>
+                            <li><i class="bi bi-check-circle me-2 text-success"></i>Urgencias coordinadas 24/7.</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card border-0 shadow-lg rounded-4">
+                            <div class="card-body p-4">
+                                <h4 class="fw-bold mb-3">Formulario de agenda</h4>
+                                <form class="row g-3 sim-form" data-success="Gracias por tu solicitud. Te contactaremos por WhatsApp.">
+                                    <div class="col-md-6">
+                                        <label for="guestNombre" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="guestNombre" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="guestMascota" class="form-label">Nombre de la mascota</label>
+                                        <input type="text" class="form-control" id="guestMascota" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="guestTelefono" class="form-label">Teléfono</label>
+                                        <input type="tel" class="form-control" id="guestTelefono" placeholder="+56911111111" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="guestEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="guestEmail">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="guestFecha" class="form-label">Fecha preferida</label>
+                                        <input type="date" class="form-control" id="guestFecha" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="guestHora" class="form-label">Horario referencial</label>
+                                        <input type="time" class="form-control" id="guestHora">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="guestMotivo" class="form-label">Motivo</label>
+                                        <textarea id="guestMotivo" rows="3" class="form-control" placeholder="Cuéntanos brevemente"></textarea>
+                                    </div>
+                                    <div class="col-12 text-end">
+                                        <button class="btn btn-success" type="submit">Enviar solicitud</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container d-none" id="portalWrapper">
+                <div class="text-white mb-5">
+                    <p class="text-uppercase text-info mb-2">Sesión profesional activa</p>
+                    <h1 class="display-5 fw-bold">Sistema de gestión VetCare PRO</h1>
+                    <p class="text-white-50">Acceso completo para registrar propietarios, pacientes, agenda, hospitalización y derivaciones.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 d-none" id="portalSection">
+            <div class="container">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3 mb-4">
+                    <div>
+                        <span class="badge bg-success-subtle text-success fw-semibold mb-2">Portal profesional</span>
+                        <h2 class="fw-bold mb-0">Herramientas para el equipo clínico y administrativo</h2>
+                    </div>
+                    <div class="text-muted small"><i class="bi bi-person-badge me-2"></i>Usuario activo: <span id="activeUser">—</span></div>
+                </div>
+
+                <ul class="nav nav-pills mb-4" id="portalTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="propietarios-tab" data-bs-toggle="pill" data-bs-target="#propietarios" type="button"
+                            role="tab" aria-controls="propietarios" aria-selected="true">Propietarios & Mascotas</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="clinico-tab" data-bs-toggle="pill" data-bs-target="#clinico" type="button" role="tab"
+                            aria-controls="clinico" aria-selected="false">Módulo Clínico</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="documentos-tab" data-bs-toggle="pill" data-bs-target="#documentos" type="button" role="tab"
+                            aria-controls="documentos" aria-selected="false">Vacunas, resultados y derivaciones</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="portalContent">
+                    <div class="tab-pane fade show active" id="propietarios" role="tabpanel" aria-labelledby="propietarios-tab">
+                        <!-- same content as previous for owners/pets/association -->
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Registro de propietarios</h5>
+                                        <p class="text-muted">Crea fichas completas con datos de contacto, preferencias y seguimiento financiero.</p>
+                                        <form class="row g-3 sim-form" data-success="Propietario registrado en VetCare PRO.">
+                                            <div class="col-md-6">
+                                                <label for="propNombre" class="form-label">Nombre completo</label>
+                                                <input type="text" class="form-control" id="propNombre" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="propIdentificacion" class="form-label">RUN / ID</label>
+                                                <input type="text" class="form-control" id="propIdentificacion" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="propCorreo" class="form-label">Correo</label>
+                                                <input type="email" class="form-control" id="propCorreo">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="propTelefono" class="form-label">Teléfono</label>
+                                                <input type="tel" class="form-control" id="propTelefono" placeholder="+56912345678">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="propDireccion" class="form-label">Dirección</label>
+                                                <input type="text" class="form-control" id="propDireccion">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="propNotas" class="form-label">Historial de pagos y comunicaciones</label>
+                                                <textarea id="propNotas" class="form-control" rows="2" placeholder="Notas relevantes"></textarea>
+                                            </div>
+                                            <div class="col-12 text-end">
+                                                <button class="btn btn-primary" type="submit">Guardar propietario</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="row g-4">
+                                    <div class="col-12">
+                                        <div class="card h-100 shadow-sm">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Registro de pacientes</h5>
+                                                <p class="text-muted">Ficha única vinculada al propietario con información médica y foto.</p>
+                                                <form class="row g-3 sim-form" data-success="Paciente creado y asociado a su propietario.">
+                                                    <div class="col-md-6">
+                                                        <label for="petNombre" class="form-label">Nombre</label>
+                                                        <input type="text" class="form-control" id="petNombre" required>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="petPropietario" class="form-label">Propietario</label>
+                                                        <select id="petPropietario" class="form-select">
+                                                            <option>Daniela Pardo</option>
+                                                            <option>Marcelo Silva</option>
+                                                            <option>Tamara Fuentes</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label for="petEspecie" class="form-label">Especie</label>
+                                                        <select id="petEspecie" class="form-select">
+                                                            <option>Canino</option>
+                                                            <option>Felino</option>
+                                                            <option>Exótico</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label for="petRaza" class="form-label">Raza</label>
+                                                        <input type="text" class="form-control" id="petRaza">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label for="petEdad" class="form-label">Edad</label>
+                                                        <input type="number" min="0" class="form-control" id="petEdad" placeholder="años">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label for="petPeso" class="form-label">Peso (kg)</label>
+                                                        <input type="number" step="0.1" class="form-control" id="petPeso">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label for="petSexo" class="form-label">Sexo</label>
+                                                        <select id="petSexo" class="form-select">
+                                                            <option>Hembra</option>
+                                                            <option>Macho</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label for="petFoto" class="form-label">Foto</label>
+                                                        <input type="file" class="form-control" id="petFoto" accept="image/*">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label for="petNotas" class="form-label">Notas clínicas</label>
+                                                        <textarea id="petNotas" rows="2" class="form-control"></textarea>
+                                                    </div>
+                                                    <div class="col-12 text-end">
+                                                        <button class="btn btn-primary" type="submit">Guardar mascota</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="card shadow-sm">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Asociación múltiple</h5>
+                                                <p class="text-muted">Propietarios y mascotas vinculados actualmente.</p>
+                                                <div class="table-responsive mb-3">
+                                                    <table class="table table-sm align-middle">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Propietario</th>
+                                                                <th>Mascotas</th>
+                                                                <th>Última actualización</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Daniela Pardo</td>
+                                                                <td>Rocco, Nina</td>
+                                                                <td>Hoy 09:10</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Marcelo Silva</td>
+                                                                <td>Kiara</td>
+                                                                <td>Ayer 18:45</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Leonor Rivas</td>
+                                                                <td>Simón, Koko</td>
+                                                                <td>02 May</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <form class="row g-3 sim-form" data-success="Asociaciones actualizadas.">
+                                                    <div class="col-md-6">
+                                                        <label for="asocPropietario" class="form-label">Propietario</label>
+                                                        <select id="asocPropietario" class="form-select">
+                                                            <option selected>Daniela Pardo</option>
+                                                            <option>Marcelo Silva</option>
+                                                            <option>Leonor Rivas</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="asocMascotas" class="form-label">Mascotas</label>
+                                                        <select id="asocMascotas" class="form-select" multiple>
+                                                            <option>Rocco</option>
+                                                            <option>Kiara</option>
+                                                            <option>Simón</option>
+                                                            <option>Nina</option>
+                                                        </select>
+                                                        <small class="text-muted d-block">Ctrl/Cmd para múltiples selecciones.</small>
+                                                    </div>
+                                                    <div class="col-12 text-end">
+                                                        <button class="btn btn-outline-primary" type="submit">Actualizar vínculos</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="clinico" role="tabpanel" aria-labelledby="clinico-tab">
+                        <div class="row g-4">
+                            <div class="col-xl-4">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Agenda de citas</h5>
+                                        <p class="text-muted">Programa por día, semana o mes asignando veterinario y paciente.</p>
+                                        <div class="btn-group mb-3" role="group">
+                                            <button class="btn btn-outline-secondary btn-sm" type="button">Día</button>
+                                            <button class="btn btn-outline-secondary btn-sm" type="button">Semana</button>
+                                            <button class="btn btn-outline-secondary btn-sm" type="button">Mes</button>
+                                        </div>
+                                        <form class="row g-3 sim-form" data-success="Cita agendada y notificada.">
+                                            <div class="col-12">
+                                                <label for="citaPaciente" class="form-label">Paciente</label>
+                                                <input type="text" class="form-control" id="citaPaciente" placeholder="Nombre de la mascota" required>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="citaFecha" class="form-label">Fecha</label>
+                                                <input type="date" class="form-control" id="citaFecha" required>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="citaHora" class="form-label">Hora</label>
+                                                <input type="time" class="form-control" id="citaHora" required>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="citaVet" class="form-label">Veterinario</label>
+                                                <select id="citaVet" class="form-select">
+                                                    <option>Dra. Andrade</option>
+                                                    <option>Dr. Cortés</option>
+                                                    <option>Dra. Villalobos</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12 text-end">
+                                                <button class="btn btn-primary" type="submit">Agregar cita</button>
+                                            </div>
+                                        </form>
+                                        <div class="mt-4">
+                                            <h6 class="fw-semibold">Próximas citas</h6>
+                                            <ul class="list-group list-group-flush small">
+                                                <li class="list-group-item px-0 d-flex justify-content-between"><span>09:00 Kiara</span><span>Dr. Cortés</span></li>
+                                                <li class="list-group-item px-0 d-flex justify-content-between"><span>11:30 Simón</span><span>Dra. Andrade</span></li>
+                                                <li class="list-group-item px-0 d-flex justify-content-between"><span>15:00 Nina</span><span>Dr. Rivas</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4">
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Ficha clínica digital</h5>
+                                        <p class="text-muted">Historial centralizado con motivo, diagnóstico, procedimientos y evolución.</p>
+                                        <div class="timeline-small">
+                                            <div>
+                                                <span class="fw-semibold">05 May</span> · Control posoperatorio
+                                            </div>
+                                            <div>
+                                                <span class="fw-semibold">28 Abr</span> · Vacuna óctuple aplicada
+                                            </div>
+                                            <div>
+                                                <span class="fw-semibold">14 Abr</span> · Desparasitación interna
+                                            </div>
+                                        </div>
+                                        <form class="row g-3 sim-form" data-success="Nota clínica guardada.">
+                                            <div class="col-12">
+                                                <label for="notaMotivo" class="form-label">Motivo de consulta</label>
+                                                <input type="text" class="form-control" id="notaMotivo">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="notaDiagnostico" class="form-label">Diagnóstico</label>
+                                                <input type="text" class="form-control" id="notaDiagnostico">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="notaProcedimiento" class="form-label">Procedimientos</label>
+                                                <textarea id="notaProcedimiento" class="form-control" rows="2"></textarea>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="notaEvolucion" class="form-label">Notas de evolución</label>
+                                                <textarea id="notaEvolucion" class="form-control" rows="2"></textarea>
+                                            </div>
+                                            <div class="col-12 text-end">
+                                                <button class="btn btn-outline-primary" type="submit">Guardar en ficha</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Recetas electrónicas</h5>
+                                        <p class="text-muted">Genera prescripciones firmadas digitalmente y envíalas al propietario.</p>
+                                        <form class="row g-3 sim-form" data-success="Receta enviada al propietario.">
+                                            <div class="col-md-6">
+                                                <label for="recetaPaciente" class="form-label">Paciente</label>
+                                                <input type="text" class="form-control" id="recetaPaciente">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="recetaMedicamento" class="form-label">Medicamento</label>
+                                                <input type="text" class="form-control" id="recetaMedicamento">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="recetaDosis" class="form-label">Dosis</label>
+                                                <input type="text" class="form-control" id="recetaDosis" placeholder="Ej. 5 ml cada 8h">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="recetaIndicaciones" class="form-label">Indicaciones</label>
+                                                <textarea id="recetaIndicaciones" rows="2" class="form-control"></textarea>
+                                            </div>
+                                            <div class="col-12 text-end">
+                                                <button class="btn btn-primary" type="submit">Generar receta</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4">
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Hospitalización</h5>
+                                        <p class="text-muted">Registra evolución diaria, medicamentos y dieta de pacientes internados.</p>
+                                        <div class="table-responsive">
+                                            <table class="table table-sm align-middle">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Paciente</th>
+                                                        <th>Estado</th>
+                                                        <th>Última nota</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Luna</td>
+                                                        <td><span class="badge bg-warning text-dark">Observación</span></td>
+                                                        <td>Estable, control de glucosa.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Simón</td>
+                                                        <td><span class="badge bg-success">Recuperación</span></td>
+                                                        <td>Comiendo dieta blanda.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <form class="row g-3 sim-form" data-success="Evolución de hospitalización registrada.">
+                                            <div class="col-md-6">
+                                                <label for="hospPaciente" class="form-label">Paciente</label>
+                                                <input type="text" class="form-control" id="hospPaciente">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="hospMedicacion" class="form-label">Medicamentos</label>
+                                                <input type="text" class="form-control" id="hospMedicacion">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="hospDieta" class="form-label">Dieta y evolución</label>
+                                                <textarea id="hospDieta" class="form-control" rows="2"></textarea>
+                                            </div>
+                                            <div class="col-12 text-end">
+                                                <button class="btn btn-outline-primary" type="submit">Guardar evolución</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Derivaciones</h5>
+                                        <p class="text-muted">Registra referencias a especialistas externos y adjunta indicaciones.</p>
+                                        <form class="row g-3 sim-form" data-success="Derivación registrada y enviada.">
+                                            <div class="col-md-6">
+                                                <label for="derPaciente" class="form-label">Paciente</label>
+                                                <input type="text" class="form-control" id="derPaciente">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="derEspecialista" class="form-label">Especialista</label>
+                                                <input type="text" class="form-control" id="derEspecialista" placeholder="Clínica externa">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="derMotivo" class="form-label">Motivo y observaciones</label>
+                                                <textarea id="derMotivo" class="form-control" rows="2"></textarea>
+                                            </div>
+                                            <div class="col-12 text-end">
+                                                <button class="btn btn-primary" type="submit">Enviar derivación</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="documentos" role="tabpanel" aria-labelledby="documentos-tab">
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Control de vacunación</h5>
+                                        <p class="text-muted">Calendario por paciente con alertas para el equipo y recordatorios al propietario.</p>
+                                        <div class="table-responsive mb-3">
+                                            <table class="table table-borderless align-middle">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Mascota</th>
+                                                        <th>Vacuna</th>
+                                                        <th>Próxima dosis</th>
+                                                        <th>Estado</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Rocco</td>
+                                                        <td>Rabia</td>
+                                                        <td>12/07/2024</td>
+                                                        <td><span class="badge bg-warning text-dark">Pendiente</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Kiara</td>
+                                                        <td>Triple felina</td>
+                                                        <td>01/06/2024</td>
+                                                        <td><span class="badge bg-success">Programada</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <form class="row g-3 sim-form" data-success="Calendario de vacunación actualizado.">
+                                            <div class="col-md-6">
+                                                <label for="vacPaciente" class="form-label">Paciente</label>
+                                                <input type="text" class="form-control" id="vacPaciente">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="vacNombre" class="form-label">Vacuna</label>
+                                                <input type="text" class="form-control" id="vacNombre">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="vacFecha" class="form-label">Próxima dosis</label>
+                                                <input type="date" class="form-control" id="vacFecha">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="vacAlertas" class="form-label">Recordatorios</label>
+                                                <select id="vacAlertas" class="form-select">
+                                                    <option>SMS + Email propietario</option>
+                                                    <option>Solo interno</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12 text-end">
+                                                <button class="btn btn-outline-primary" type="submit">Registrar vacuna</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Resultados de exámenes</h5>
+                                        <p class="text-muted">Carga documentos PDF o imágenes y compártelos en la ficha del paciente.</p>
+                                        <form class="row g-3 sim-form" data-success="Resultado almacenado y notificado.">
+                                            <div class="col-md-6">
+                                                <label for="examPaciente" class="form-label">Paciente</label>
+                                                <input type="text" id="examPaciente" class="form-control">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="examTipo" class="form-label">Tipo de examen</label>
+                                                <select id="examTipo" class="form-select">
+                                                    <option>Laboratorio</option>
+                                                    <option>Imagenología</option>
+                                                    <option>Cardiología</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="examArchivo" class="form-label">Archivo</label>
+                                                <input type="file" class="form-control" id="examArchivo" accept="application/pdf,image/*">
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="examNotas" class="form-label">Conclusiones</label>
+                                                <textarea id="examNotas" rows="2" class="form-control"></textarea>
+                                            </div>
+                                            <div class="col-12 text-end">
+                                                <button class="btn btn-primary" type="submit">Cargar resultado</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tablero de comunicaciones</h5>
+                                        <p class="text-muted">Envía mensajes internos al personal cuando existan vacunas, resultados o derivaciones pendientes.</p>
+                                        <ul class="list-unstyled mb-4">
+                                            <li class="d-flex justify-content-between align-items-center mb-2">
+                                                <span><i class="bi bi-bell text-warning me-2"></i>2 vacunas pendientes</span>
+                                                <span class="badge bg-warning text-dark">Farmacia</span>
+                                            </li>
+                                            <li class="d-flex justify-content-between align-items-center mb-2">
+                                                <span><i class="bi bi-envelope text-primary me-2"></i>1 resultado sin revisar</span>
+                                                <span class="badge bg-primary-subtle text-primary">Laboratorio</span>
+                                            </li>
+                                            <li class="d-flex justify-content-between align-items-center">
+                                                <span><i class="bi bi-arrow-left-right text-success me-2"></i>Derivación cardiología confirmada</span>
+                                                <span class="badge bg-success-subtle text-success">Externos</span>
+                                            </li>
+                                        </ul>
+                                        <form class="row g-3 sim-form" data-success="Alerta enviada a los destinatarios seleccionados.">
+                                            <div class="col-md-6">
+                                                <label for="alertaDestino" class="form-label">Destinatario</label>
+                                                <select id="alertaDestino" class="form-select">
+                                                    <option>Recepción</option>
+                                                    <option>Equipo médico</option>
+                                                    <option>Laboratorio</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="alertaPrioridad" class="form-label">Prioridad</label>
+                                                <select id="alertaPrioridad" class="form-select">
+                                                    <option>Normal</option>
+                                                    <option>Alta</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="alertaMensaje" class="form-label">Mensaje</label>
+                                                <textarea id="alertaMensaje" rows="2" class="form-control" placeholder="Detalle la alerta"></textarea>
+                                            </div>
+                                            <div class="col-12 text-end">
+                                                <button class="btn btn-outline-primary" type="submit">Enviar alerta</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="partner-strip py-5 bg-light">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-md-3 text-center text-md-start">
+                    <p class="fw-semibold mb-1">Atención general</p>
+                    <small class="text-muted d-block">Lunes a Viernes: 09:00 a 19:00 hrs</small>
+                    <small class="text-muted d-block">Sábados: 09:00 a 14:00 hrs</small>
+                    <hr class="w-50 mx-md-0 mx-auto">
+                    <p class="fw-semibold mb-1">Urgencias</p>
+                    <small class="text-muted d-block">24/7 · +56960006000</small>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold">Explora</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li>Servicios</li>
+                        <li>Planes preventivos</li>
+                        <li>Telemedicina</li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold">Conócenos</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li>Equipo médico</li>
+                        <li>Sucursales</li>
+                        <li>Política de privacidad</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold">Soporte</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li>Portal Clientes</li>
+                        <li>Portal Profesionales</li>
+                        <li>Preguntas frecuentes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 bg-white border-top">
+        <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center gap-2">
+            <div class="d-flex align-items-center gap-3">
+                <img src="assets/img/logo.svg" alt="Logo VetCare PRO" width="40" height="40">
+                <p class="mb-0 small text-muted">&copy; <span id="year"></span> VetCare PRO · Clínica integral para mascotas.</p>
+            </div>
+            <small class="text-muted">Usuarios profesionales gestionados por el departamento de TI.</small>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Acceso profesional</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted small">Usuarios creados por TI. Ingresa tus credenciales para activar el portal.</p>
+                    <div class="alert alert-danger d-none" id="loginAlert">Credenciales incorrectas.</div>
+                    <form id="loginForm" class="row g-3">
+                        <div class="col-12">
+                            <label for="loginUsuario" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="loginUsuario" required placeholder="Ej. admin">
+                        </div>
+                        <div class="col-12">
+                            <label for="loginClave" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="loginClave" required>
+                        </div>
+                        <div class="col-12 text-end">
+                            <button class="btn btn-primary" type="submit">Ingresar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Acción completada</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-0">Registro simulado con éxito.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Listo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
